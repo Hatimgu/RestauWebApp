@@ -1,0 +1,28 @@
+site_homepage:
+    path:     /site
+    defaults: { _controller: "SiteBundle:Public:index" }
+    methods: GET
+
+
+plats_show:
+    path:     /{id}/show
+    defaults: { _controller: "SiteBundle:Public:show" }
+    methods:  GET
+
+
+plats_new:
+    path:     /new
+    defaults: { _controller: "SiteBundle:Public:new" }
+    methods:  [GET, POST]
+
+plats_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SiteBundle:Public:edit" }
+    methods:  [GET, POST]
+
+
+
+plats_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SiteBundle:Public:delete" }
+    methods:  GET

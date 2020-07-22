@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+ 
+
+
+<div class="w3-container">
+
+
+ 
+    <h1  style="text-align:center" >Plats list</h1>
+
+    <table  class="w3-table-all" border="1" style="width:100%" border-style="dotted" border-color="#000000">
+        <thead>
+             <tr style="background-color:#8cff66" class="w3-light-grey w3-hover-green">
+                <th>Id</th>
+                <th>Name plat</th>
+                <th>Descripiton plat</th>
+                <th>price</th>
+                <th>is_available</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for Plats in Plats %}
+           <tr class="w3-hover-text-blue">
+                 <td>{{Plats.id}}</td>
+                <td>{{ Plats.platName}}</td>
+                <td>{{ Plats.platDescription }}</td>
+                <td>{{ Plats.price }}</td>
+                <td>{{Plats.isAvailable}}</td>
+                <td>
+              <a class="btn-success btn-xs"  href="{{ path('plats_show', { 'id': Plats.id }) }}">show</a> 
+              <a  class="btn-success btn-xs" href="{{ path('plats_edit', { 'id': Plats.id }) }}">Edit</a>
+             <a  class="btn-danger btn-xs" href="{{ path('plats_delete', { 'id': Plats.id }) }}">Delete</a>
+    </td>
+    </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+     <ul>
+        <li >
+           <h3> <i class="glyphicon glyphicon-file"></i> <a href="{{ path('plats_new') }}">Créer un plats</a></h3>
+        </li>
+        
+    </ul>
+{% endblock %}

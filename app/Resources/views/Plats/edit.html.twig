@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <h1>Modifier un plat</h1>
+    <div style="margin-left:10px;">
+    {{ form_start(edit_form) }}
+        <div class="form-group">{{ form_widget(edit_form.platName) }}</div>
+        <div class="form-group">{{ form_widget(edit_form.platDescription) }}</div>
+        <div class="form-group">{{ form_widget(edit_form.price) }}</div>
+        <div class="form-group">{{ form_widget(edit_form.isAvailable) }}</div>
+      <a href="{{ path('site_homepage') }}"><input oninvalid="alert('You must fill out the form!');" required type="submit" value="Edit" />
+    {{ form_end(edit_form) }}</a>
+    </div>
+
+    
+       
+{% endblock %}
+
+

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <h1>Créer un Plats</h1>
+
+<div style="margin-left:10px;">
+    {{ form_start(form) }}
+        <div class="form-group">Name Plat : {{ form_widget(form.platName) }}</div>
+        <div class="form-group">Description Plat : {{ form_widget(form.platDescription) }}</div>
+        <div class="form-group"> Prix Plat: {{ form_widget(form.price) }}</div>
+        <div class="form-group">is available : {{ form_widget(form.isAvailable) }}</div>
+     
+        <a href="{{ path('site_homepage') }}"> <input type="submit" value="Create" />
+    {{ form_end(form) }}
+    </div>
+
+
+    <ul>
+        <li>
+           <h3> <a href="{{ path('site_homepage') }}">Back to the list</a></h3>
+        </li>
+    </ul>
+{% endblock %}

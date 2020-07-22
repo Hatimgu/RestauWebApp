@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 >Plats {{plats.id}}</h1>
+
+    <table border="2"  border-style="dotted" border-color="#000000">
+        <tbody>
+            <tr >
+                <th style="background-color:#8cff66">Id</th>
+                <td style="background-color: #c6ffb3">{{ plats.id }}</td>
+            </tr>
+            <tr>
+                <th style="background-color:#8cff66">Name plat</th>
+                <td style="background-color: #c6ffb3">{{ plats.platName }}</td>
+            </tr>
+            <tr>
+                <th style="background-color:#8cff66">Description plat</th>
+                <td style="background-color: #c6ffb3">{{ plats.platDescription }}</td>
+            </tr>
+            <tr>
+                <th style="background-color:#8cff66">prix</th>
+                <td style="background-color: #c6ffb3">{{ plats.price }}</td>
+            </tr>
+            <tr>
+                <th style="background-color:#8cff66">is available</th>
+                <td style="background-color: #c6ffb3">{{ plats.isAvailable }}</td>
+            </tr>
+           
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+          <h3>  <a href="{{ path('site_homepage') }}">Back to the list</a></h3>
+        </li>
+        
+    </ul>
+{% endblock %}
